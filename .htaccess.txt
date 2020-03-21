@@ -9,12 +9,3 @@ deny from all
 RewriteEngine on
 RewriteCond %{THE_REQUEST} ^.*/index.html
 RewriteRule ^(.*)index.html$ https://xenodochial-hermann-c11888.netlify.com/$1 [R=301,L]
-
-
-# Add Trailing Slash If Not A File...
-<IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteCond %{REQUEST_URI} !/$
-    RewriteCond %{REQUEST_URI} !\.[^/\.]+$
-    RewriteRule .* %{REQUEST_URI}/ [R=301,L]
-</IfModule>
